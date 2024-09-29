@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import KanbanGroup from './KanbanGroup';
 import './KanbanBoard.css'; // Importing the CSS file
-
 const KanbanBoard = ({ tickets, users }) => {
-  const [grouping, setGrouping] = useState('status');
-  const [sorting, setSorting] = useState('priority');
-  const [isDropdownOpen, setDropdownOpen] = useState(false); // State to manage dropdown visibility
+  const [grouping, setGrouping] = useState(() => localStorage.getItem('kanban-grouping') || 'status');
+  const [sorting, setSorting] = useState(() => localStorage.getItem('kanban-sorting') || 'priority');
+  
+  // State to manage dropdown visibility
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    const savedGrouping = localStorage.getItem('kanban-grouping');
-    const savedSorting = localStorage.getItem('kanban-sorting');
-    if (savedGrouping) setGrouping(savedGrouping);
-    if (savedSorting) setSorting(savedSorting);
-  }, []);
-
+  // Save grouping and sorting to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem('kanban-grouping', grouping);
-    localStorage.setItem('kanban-sorting', sorting);
-  }, [grouping, sorting]);
+  }, [grouping]);
 
+  useEffect(() => {
+    localStorage.setItem('kanban-sorting', sorting);
+  }, [sorting]);
+
+  // Sort and group the tickets based on the selected criteria
   const sortTickets = (tickets) => {
     return [...tickets].sort((a, b) => {
       if (sorting === 'priority') return b.priority - a.priority;
@@ -52,7 +51,6 @@ const KanbanBoard = ({ tickets, users }) => {
     }
     return groups;
   };
-
   const groupedTickets = groupTickets(sortTickets(tickets));
 
   // Icon rendering for "In Progress" and "Completed" statuses
