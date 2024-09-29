@@ -144,8 +144,8 @@ const KanbanBoard = ({ tickets, users }) => {
   );
 
   return (
-    <div className="kanban-board">
-      <div className="kanban-controls">
+    <div>
+            <div className="kanban-controls">
         <div className="display-container">
           <div className="display-title" onClick={() => setDropdownOpen(!isDropdownOpen)}>
             {renderDisplayIcon()}
@@ -173,7 +173,7 @@ const KanbanBoard = ({ tickets, users }) => {
           )}
         </div>
       </div>
-
+      <div className="kanban-board">
       <div className="kanban-columns">
         {Object.keys(groupedTickets).map((group) => (
           <div className="kanban-column" key={group}>
@@ -215,6 +215,7 @@ const KanbanBoard = ({ tickets, users }) => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const KanbanGroup = ({ groupTitle, tickets, grouping }) => {
                 description={ticket.description}
                 priority={ticket.priority}
                 status={ticket.status} // Passing status to KanbanCard
-                userId={ticket.userId}
+                Id={ticket.id}
                 grouping={grouping} // Passing grouping as a prop
                 tag={ticket.tag}
               />

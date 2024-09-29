@@ -2,7 +2,6 @@ import React from 'react';
 
 // Assuming this renderIcon function is available here as well.
 const renderIcon = (status) => {
-  // console.log(`Groupinbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbg: ${status}`);
   switch (status) {
     case 'In progress':
       return (
@@ -75,15 +74,13 @@ const renderIcon = (status) => {
   }
 };
 
-const KanbanCard = ({ title, description, priority, status, userId, grouping, tag }) => {
+const KanbanCard = ({ title, description, priority, status, Id, grouping, tag }) => {
   const priorityLevels = ['No Priority', 'Low', 'Medium', 'High', 'Urgent'];
-  // Remove the 'usr-' part from userId and keep only the number
-  const userNumber = userId.replace(/\D/g, ''); // This will extract only the number part
-
+  //  console.log(`Groupinbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbg: ${Id}`);
   return (
     <div className={`kanban-card priority-${priority}`}>
       <div>
-        <strong>CAM-</strong> {userNumber}
+        <span>{Id}</span>
       </div>
       <h4>
         {/* Display the icon according to status if grouping is 'user' */}

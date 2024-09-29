@@ -1,11 +1,14 @@
 .kanban-board {
     padding: 20px;
+    background-color: #efefef;
 }
 
 .kanban-controls {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .display-container {
@@ -16,7 +19,7 @@
 .display-title {
     background-color: #f0f0f0;
     padding: 10px 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* This border can be kept if you want */
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -63,28 +66,22 @@
 
 /* Style for each Kanban group (column) */
 .kanban-group {
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    flex: 1; /* Make each group take equal space */
-    min-width: 200px; /* Set a minimum width for each column */
+    background-color: #efefef; /* Removed border */
 }
 
 /* Ticket card styles */
 .ticket-container {
     display: flex;
     flex-direction: column;
+    /* Removed border */
 }
 
 .ticket-card {
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* If you want to keep borders for ticket cards, leave this line. If not, remove it. */
     border-radius: 5px;
     padding: 15px;
     margin: 5px 0; /* Margin between tickets */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ticket-card h4 {
