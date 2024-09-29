@@ -1,0 +1,96 @@
+.kanban-board {
+    padding: 20px;
+}
+
+.kanban-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.display-container {
+    position: relative;
+    margin-right: 20px;
+}
+
+.display-title {
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures the dropdown is above other elements */
+    display: flex; /* Align items horizontally */
+    flex-direction: column; /* Align items in a column */
+    margin-top: 10px; /* Increased margin for space between display and dropdown */
+}
+
+.dropdown-item {
+    display: flex; /* Use flexbox to position items horizontally */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+    padding: 10px;
+}
+
+.dropdown-item label {
+    margin-right: 50px; /* Increased space between label and dropdown */
+}
+
+.dropdown-item select {
+    width: auto; /* Auto width for dropdowns */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Style for the columns */
+.kanban-columns {
+    display: flex; /* Use flexbox to arrange columns */
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
+
+/* Style for each Kanban group (column) */
+.kanban-group {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    flex: 1; /* Make each group take equal space */
+    min-width: 200px; /* Set a minimum width for each column */
+}
+
+/* Ticket card styles */
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px 0; /* Margin between tickets */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card h4 {
+    margin: 0 0 10px 0; /* Margin for title */
+}
+
+.ticket-card p {
+    margin: 5px 0; /* Margin for paragraph elements */
+}

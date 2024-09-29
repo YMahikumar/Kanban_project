@@ -1,0 +1,42 @@
+.kanban-group {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .ticket-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ticket-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px 0; /* Margin between tickets */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .ticket-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  .ticket-card h4 {
+    margin: 0 0 10px 0; /* Margin for title */
+  }
+  
+  .ticket-card p {
+    margin: 5px 0; /* Margin for paragraph elements */
+  }
+  
+  .ticket-icon {
+    display: inline-block; /* Align icons next to the ticket title */
+    margin-right: 10px; /* Space between icon and title */
+    vertical-align: middle; /* Center the icon vertically with text */
+  }
+  
